@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9c086c29783884798ddab1212921eb, type: 3}
+  m_Name: LevelConfig01
+  m_EditorClassIdentifier: 
+  _boardSize: {x: 6, y: 14}
+  _rowsMax: 6
+  _rowsMin: 4
+  _useSeed: 1
+  _randomSeed: 0
+  _bubbleMoveSpeed: 8
+  _bubbleFlySpeed: 20
+  _bubbleView: {fileID: 225627076588982605, guid: 9047373281b585645a09ff11016b0203, type: 3}
+  _bubbleData:
+  - Number: 2
+    Color:
+      serializedVersion: 2
+      rgba: 4278190335
+  - Number: 4
+    Color:
+      serializedVersion: 2
+      rgba: 4294902272
+  - Number: 8
+    Color:
+      serializedVersion: 2
+      rgba: 4282384128
+  _bubbleQueue: 
