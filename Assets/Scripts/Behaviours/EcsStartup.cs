@@ -42,6 +42,7 @@ namespace FreeTeam.BubbleShooter.ECS
                 .Add(new CameraInitSystem())
                 .Add(new BackgroundInitSystem())
                 .Add(new BoardPhysicsBoundsInitSystem())
+                .Add(new BoardInitSystem())
 
                 .Add(new InputSystem())
 
