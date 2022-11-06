@@ -24,13 +24,13 @@ MonoBehaviour:
   - Number: 2
     Color:
       serializedVersion: 2
-      rgba: 4278190335
+      rgba: 4281022912
   - Number: 4
     Color:
       serializedVersion: 2
-      rgba: 4294902272
+      rgba: 4289547306
   - Number: 8
     Color:
       serializedVersion: 2
-      rgba: 4282384128
+      rgba: 4280397966
   _bubbleQueue: 
