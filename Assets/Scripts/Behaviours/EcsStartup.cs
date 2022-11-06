@@ -52,7 +52,6 @@ namespace FreeTeam.BubbleShooter.ECS
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
 
-                .DelHere<New>()
                 .DelHere<WorldPosition>()
 
                 .Inject(GetComponent<ISceneContext>())
