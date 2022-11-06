@@ -1,13 +1,13 @@
-﻿using FreeTeam.BP.Editor;
-using FreeTeam.BubbleShooter.Data;
+﻿using FreeTeam.BubbleShooter.Data;
 using FreeTeam.BubbleShooter.Views;
+using FreeTeam.Editor;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace FreeTeam.BubbleShooter.Configuration
 {
     [CreateAssetMenu(fileName = "LevelConfig", menuName = "BubbleShooterGame/LevelConfig")]
-    public sealed class LevelConfig : ScriptableObject
+    public sealed class LevelConfig : ScriptableObject, ILevelConfig
     {
         #region SerializeFields
         [Foldout("Board settings", true)]

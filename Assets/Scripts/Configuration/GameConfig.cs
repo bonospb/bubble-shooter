@@ -1,11 +1,11 @@
-﻿using FreeTeam.BP.Editor;
-using FreeTeam.BubbleShooter.Views;
+﻿using FreeTeam.BubbleShooter.Views;
+using FreeTeam.Editor;
 using UnityEngine;
 
 namespace FreeTeam.BubbleShooter.Configuration
 {
     [CreateAssetMenu(fileName = "GameConfig", menuName = "BubbleShooterGame/GameConfig")]
-    public sealed class GameConfig : ScriptableObject
+    public sealed class GameConfig : ScriptableObject, IGameConfig
     {
         #region SerializeFields
         [Foldout("Game settings", true)]
@@ -19,7 +19,7 @@ namespace FreeTeam.BubbleShooter.Configuration
         #endregion
 
         #region Public
-        public LevelConfig[] LevelConfigs => levelConfigs;
+        public ILevelConfig[] LevelConfigs => levelConfigs;
 
         public MergePopupView MergePopupText => _mergePopupText;
 
