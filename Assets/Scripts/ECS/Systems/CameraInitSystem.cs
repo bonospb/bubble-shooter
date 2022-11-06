@@ -33,7 +33,7 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
 
             var gridWidth = bottomRight.x - bottomLeft.x;
 
-            sceneContext.Value.Camera.orthographicSize = gridWidth + 0.5f;
+            sceneContext.Value.Camera.orthographicSize = gridWidth + 1f;
         }
         #endregion
     }
