@@ -22,7 +22,9 @@ namespace FreeTeam.BubbleShooter.ECS
         private EcsWorld world = null;
         private EcsSystems systems = null;
 
+        private ISceneContext sceneContext = null;
         private ILevelConfig levelConfig = null;
+        private IRandomService randomService = null;
         #endregion
 
         #region Unity methods
@@ -30,7 +32,9 @@ namespace FreeTeam.BubbleShooter.ECS
         {
             Application.targetFrameRate = 60;
 
+            sceneContext = GetComponent<ISceneContext>();
             levelConfig = gameConfig.LevelConfigs[levelIdx];
+            randomService = new RandomService(levelConfig.UseSeed ? levelConfig.RandomSeed : null);
 
             world = new EcsWorld();
             systems = new EcsSystems(world);
@@ -41,8 +45,11 @@ namespace FreeTeam.BubbleShooter.ECS
 
                 .Add(new InputSystem())
 
+                .Add(new NextBubbleSystem())
                 .Add(new TrajectorySystem())
 
+                .Add(new NextBubbleViewSystem())
+                .Add(new CreateBubbleViewSystem())
                 .Add(new TrajectoryViewUpdateSystem())
 
                 .Add(new InputClearSystem())
@@ -54,7 +61,8 @@ namespace FreeTeam.BubbleShooter.ECS
 
                 .DelHere<WorldPosition>()
 
-                .Inject(GetComponent<ISceneContext>())
+                .Inject(sceneContext)
+                .Inject(randomService)
                 .Inject(gameConfig)
                 .Inject(levelConfig)
 
