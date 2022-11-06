@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace FreeTeam.BP.Editor
+namespace FreeTeam.Editor
 {
     public class FoldoutAttribute : PropertyAttribute
     {

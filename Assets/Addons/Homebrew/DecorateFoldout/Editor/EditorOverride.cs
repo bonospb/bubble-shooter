@@ -8,7 +8,7 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 
 
-namespace FreeTeam.BP.Editor
+namespace FreeTeam.Editor
 {
     [CustomEditor(typeof(Object), true, isFallback = true)]
     [CanEditMultipleObjects]
