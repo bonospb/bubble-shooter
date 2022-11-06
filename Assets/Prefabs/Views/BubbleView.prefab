@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7476855895687678170}
   - component: {fileID: 8585422201640910953}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gradient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5641282846959569589}
   - component: {fileID: 4913117452016431070}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Glare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4649231328148053646}
   - component: {fileID: 6015851575667352203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7068574826679565982}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7741123999862332300}
   - component: {fileID: 332473778429849981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5914437511089178989}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Debug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076748289150213110}
   - component: {fileID: 3627134665184130241}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 3256768200046199770}
   - component: {fileID: 5367124612524184303}
   - component: {fileID: 2676393710557197963}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DebugText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 1992396256878506938}
   - component: {fileID: 3240510855325629982}
   - component: {fileID: 225627076588982605}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BubbleView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8964870696672210944}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
