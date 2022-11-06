@@ -9,6 +9,7 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
     {
         #region Inject
         private readonly EcsFilterInject<Inc<Trajectory, WorldPosition>> trajectoryFilter = default;
+        private readonly EcsFilterInject<Inc<Prediction>> predictionFilter = default;
 
         private readonly EcsPoolInject<WorldPosition> worldPositionPool = default;
 
@@ -20,7 +21,7 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
         {
             var trajectoryCount = trajectoryFilter.Value.GetEntitiesCount();
 
-            sceneContext.Value.TrajectoryRenderer.enabled = !trajectoryFilter.Value.IsEmpty();
+            sceneContext.Value.TrajectoryRenderer.enabled = !predictionFilter.Value.IsEmpty();
             sceneContext.Value.TrajectoryRenderer.positionCount = trajectoryCount;
 
             var i = 0;

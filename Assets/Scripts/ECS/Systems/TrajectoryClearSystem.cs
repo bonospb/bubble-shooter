@@ -9,13 +9,17 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
         #region Inject
         private readonly EcsWorldInject world = default;
 
-        private readonly EcsFilterInject<Inc<Trajectory>> _trajectoryFilter = default;
+        private readonly EcsFilterInject<Inc<Trajectory>> trajectoryFilter = default;
+        private readonly EcsFilterInject<Inc<Prediction>> predicationFilter = default;
         #endregion
 
         #region Implementation
         public void Run(IEcsSystems systems)
         {
-            foreach (var entity in _trajectoryFilter.Value)
+            foreach (var entity in trajectoryFilter.Value)
+                world.Value.DelEntity(entity);
+
+            foreach (var entity in predicationFilter.Value)
                 world.Value.DelEntity(entity);
         }
         #endregion

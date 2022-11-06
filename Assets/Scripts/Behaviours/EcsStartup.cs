@@ -51,6 +51,7 @@ namespace FreeTeam.BubbleShooter.ECS
 
                 .Add(new NextBubbleViewSystem())
                 .Add(new CreateBubbleViewSystem())
+                .Add(new PredictionViewUpdateSystem())
                 .Add(new TrajectoryViewUpdateSystem())
 
                 .Add(new InputClearSystem())
@@ -60,6 +61,7 @@ namespace FreeTeam.BubbleShooter.ECS
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
 
+                .DelHere<Prediction>()
                 .DelHere<WorldPosition>()
 
                 .Inject(sceneContext)
