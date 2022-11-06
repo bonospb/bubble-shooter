@@ -1,22 +1,28 @@
+using Assets.Scripts.ECS.Systems;
 using FreeTeam.BubbleShooter.Configuration;
+using FreeTeam.BubbleShooter.ECS.Components;
+using FreeTeam.BubbleShooter.ECS.Systems;
 using FreeTeam.BubbleShooter.Services;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
+using Leopotam.EcsLite.ExtendedSystems;
 using UnityEngine;
 
 namespace FreeTeam.BubbleShooter.ECS
 {
     [RequireComponent(typeof(SceneContext))]
-    public class EcsStartup : MonoBehaviour
+    internal class EcsStartup : MonoBehaviour
     {
         #region SerializeFields
-        [SerializeField] private int _levelIdx = 0;
-        [SerializeField] private GameConfig _gameConfig = default;
+        [SerializeField] private int levelIdx = 0;
+        [SerializeField] private GameConfig gameConfig = default;
         #endregion
 
-        #region private
-        private EcsWorld _world = null;
-        private EcsSystems _systems = null;
+        #region Private
+        private EcsWorld world = null;
+        private EcsSystems systems = null;
+
+        private ILevelConfig levelConfig = null;
         #endregion
 
         #region Unity methods
@@ -24,30 +30,48 @@ namespace FreeTeam.BubbleShooter.ECS
         {
             Application.targetFrameRate = 60;
 
-            _world = new EcsWorld();
-            _systems = new EcsSystems(_world);
-            _systems
+            levelConfig = gameConfig.LevelConfigs[levelIdx];
 
+            world = new EcsWorld();
+            systems = new EcsSystems(world);
+            systems
+                .Add(new CameraInitSystem())
+                .Add(new BackgroundInitSystem())
+                .Add(new BoardPhysicsBoundsInitSystem())
+
+                .Add(new InputSystem())
+
+                .Add(new TrajectorySystem())
+
+                .Add(new TrajectoryViewUpdateSystem())
+
+                .Add(new InputClearSystem())
+                .Add(new TrajectoryClearSystem())
 
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
+
+                .DelHere<New>()
+                .DelHere<WorldPosition>()
+
                 .Inject(GetComponent<ISceneContext>())
-                .Inject(_gameConfig)
+                .Inject(gameConfig)
+                .Inject(levelConfig)
 
                 .Init();
         }
 
         private void Update() =>
-            _systems?.Run();
+            systems?.Run();
 
         private void OnDestroy()
         {
-            _systems?.Destroy();
-            _systems = null;
+            systems?.Destroy();
+            systems = null;
 
-            _world?.Destroy();
-            _world = null;
+            world?.Destroy();
+            world = null;
         }
         #endregion
     }

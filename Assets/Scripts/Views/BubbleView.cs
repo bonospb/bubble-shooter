@@ -1,5 +1,5 @@
 using DG.Tweening;
-using FreeTeam.BP.Editor;
+using FreeTeam.Editor;
 using TMPro;
 using UnityEngine;
 

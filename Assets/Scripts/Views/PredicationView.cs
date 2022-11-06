@@ -14,10 +14,8 @@ namespace FreeTeam.BubbleShooter.Views
         #endregion
 
         #region Unity methods
-        private void OnDestroy()
-        {
+        private void OnDestroy() =>
             DOTween.Kill(_renderer.transform);
-        }
         #endregion
     }
 }
