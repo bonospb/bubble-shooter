@@ -1,6 +1,6 @@
 ﻿namespace FreeTeam.BubbleShooter.ECS.Components
 {
-    public struct Merge
+    public struct Collect
     {
         public int Index;
     }

@@ -12,7 +12,7 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
 {
     public sealed class CreateBubbleViewSystem : IEcsRunSystem
     {
-        #region Private
+        #region Inject
         private readonly EcsFilterInject<Inc<Bubble>, Exc<UnityObject<BubbleView>>> bubblesFilter = default;
 
         private readonly EcsPoolInject<Bubble> bubblePool = default;

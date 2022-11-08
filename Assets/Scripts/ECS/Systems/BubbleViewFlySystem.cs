@@ -18,6 +18,7 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
         private readonly EcsFilterInject<Inc<Prediction, Position>> predictionFilter = default;
 
         private readonly EcsPoolInject<New> newPool = default;
+        private readonly EcsPoolInject<Created> createdPool = default;
         private readonly EcsPoolInject<Position> positionPool = default;
         private readonly EcsPoolInject<WorldPosition> worldPositionPool = default;
         private readonly EcsPoolInject<UnityObject<BubbleView>> bubbleViewPool = default;
@@ -57,6 +58,8 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
                     .OnComplete(() =>
                     {
                         newPool.Value.Add(bubbleEntity);
+                        if (createdPool.Value.Has(bubbleEntity))
+                            createdPool.Value.Del(bubbleEntity);
 
                         bubbleView.Trail.enabled = false;
                         bubbleView.SetText($"{pos.x}/{pos.y}");

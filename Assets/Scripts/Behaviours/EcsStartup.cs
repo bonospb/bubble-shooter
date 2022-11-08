@@ -49,10 +49,35 @@ namespace FreeTeam.BubbleShooter.ECS
                 .Add(new NextBubbleSystem())
                 .Add(new TrajectorySystem())
 
+                .Add(new BubbleConnectionSystem())
+                .Add(new BubbleFallSystem())
+
+                .Add(new BubbleCollectSystem())
+                .Add(new BubbleExplodeSystem())
+
+                .Add(new ShootSystem())
+
+                .Add(new BubbleFlowSystem())
+
                 .Add(new NextBubbleViewSystem())
                 .Add(new CreateBubbleViewSystem())
                 .Add(new PredictionViewUpdateSystem())
                 .Add(new TrajectoryViewUpdateSystem())
+                .Add(new BubbleFallDeathSystem())
+
+                .Add(new BubbleViewMoveSystem())
+                .Add(new BubbleViewFlySystem())
+                .Add(new BubbleViewFallSystem())
+                .Add(new BubbleViewShakeSystem())
+
+                //.Add(new MergeTextSpawnSystem())
+                //.Add(new PerfectNotificationSystem())
+                //.Add(new ComboMergeNotificationSystem())
+
+                .Add(new BubbleViewTweeningMarkSystem())
+                //  -   .Add(new BubbleCompleteMergeSystem())
+
+                .Add(new BubbleViewHangingDestroySystem())
 
                 .Add(new InputClearSystem())
                 .Add(new TrajectoryClearSystem())
@@ -62,7 +87,12 @@ namespace FreeTeam.BubbleShooter.ECS
 #endif
 
                 .DelHere<Prediction>()
+                .DelHere<Connected>()
+                .DelHere<Created>()
                 .DelHere<WorldPosition>()
+                .DelHere<Collecting>()
+                .DelHere<Destroyed>()
+                .DelHere<New>()
 
                 .Inject(sceneContext)
                 .Inject(randomService)

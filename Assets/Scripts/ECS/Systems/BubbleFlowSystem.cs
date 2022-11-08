@@ -10,7 +10,7 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
         #region Inject
         private readonly EcsFilterInject<Inc<Bubble, Position>, Exc<Created>> bubbleFilter = default;
         private readonly EcsFilterInject<Inc<Moving>> movingFilter = default;
-        private readonly EcsFilterInject<Inc<Merge>> mergeFilter = default;
+        private readonly EcsFilterInject<Inc<Collect>> mergeFilter = default;
 
         private readonly EcsPoolInject<Position> positionPool = default;
 

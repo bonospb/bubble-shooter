@@ -16,7 +16,7 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
 
         private readonly EcsPoolInject<Position> positionPool = default;
         private readonly EcsPoolInject<Created> createdPool = default;
-        private readonly EcsPoolInject<Merge> mergePool = default;
+        private readonly EcsPoolInject<Collect> collectPool = default;
         private readonly EcsPoolInject<Next> nextPool = default;
         #endregion
 
@@ -37,7 +37,7 @@ namespace FreeTeam.BubbleShooter.ECS.Systems
             {
                 positionPool.Value.Add(bubble).Value = pos;
                 createdPool.Value.Add(bubble);
-                mergePool.Value.Add(bubble);
+                collectPool.Value.Add(bubble);
                 nextPool.Value.Del(bubble);
             }
         }
